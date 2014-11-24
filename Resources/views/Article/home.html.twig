@@ -1,0 +1,7 @@
+{% extends 'YitHelpBundle::layout.html.twig' %}
+
+{% block category %}
+    {% for categories in  category %}
+        <a href="{{ path('my_terms', {'slug':categories.slug})}}"> {{ categories.title }}<br> </a>
+    {% endfor %}
+{% endblock category %}

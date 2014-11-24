@@ -1,0 +1,51 @@
+<?php
+
+namespace Yit\HelpBundle\Controller;
+
+use Yit\HelpBundle\Entity\Article;
+use Yit\HelpBundle\Entity\Category;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints as Assert;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+/**
+ *
+ */
+class ArticleController extends Controller
+{
+
+    /**
+     * @Route("/", name="yit_content_homepage")
+     * @Template()"
+     */
+    public function homeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $category = $em->getRepository('YitHelpBundle:Category')->findAllData();
+        if (!$category) {
+            throw $this->createNotFoundException('No category found');
+        }
+        return array('category' => $category);
+    }
+
+    /**
+     * @Route("/article/{slug}", name="my_terms")
+     * @Template()
+     */
+    public function showAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $articles = $em->getRepository('YitHelpBundle:Article')->findAllData($slug);
+        if (!$articles) {
+            throw $this->createNotFoundException('No article found for category');
+        }
+        $category = $em->getRepository('YitHelpBundle:Category')->findAllData();
+        return array('articles' => $articles, 'category' => $category);
+    }
+
+} 

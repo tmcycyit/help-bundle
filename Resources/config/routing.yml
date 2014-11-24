@@ -1,0 +1,8 @@
+#article_help:
+#      resource: "@YitHelpBundle/Controller/ArticleController.php"
+#      type:     annotation
+#
+#yit_help:
+#    resource: "@YitHelpBundle/Controller/DefaultController.php"
+#    type:     annotation
+#
