@@ -1,0 +1,13 @@
+{
+    "name": "yit/help-bundle",
+    "type": "symfony-bundle",
+    "license": "YIT",
+    "autoload": {
+        "psr-0": { "Yit\\HelpBundle": "" }
+    },
+    "require": {
+        "stfalcon/tinymce-bundle": "0.3.*"
+    },
+
+    "target-dir": "Yit/HelpBundle"
+}
