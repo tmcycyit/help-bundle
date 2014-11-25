@@ -54,8 +54,8 @@ class Category
 
     /**
      * @var \$article
-     *
      * @ORM\OneToMany(targetEntity="Article", mappedBy="category", cascade={"persist"})
+     * @ORM\OrderBy({"position" = "ASC"})
      * @Groups({"category_article"})
      */
     protected $article;

@@ -24,16 +24,16 @@ class CategoryController extends FOSRestController
 {
     /**
      *
-     * This function is used to get a Category by given id.
+     * This function is used to get a Category and its Articles by given id.
      *
      * @ApiDoc(
      *  resource=true,
      *  section="Category",
-     *  description="This function is used to get a Category by given id.",
+     *  description="This function is used to get a Category and its Articles by given id.",
      *  statusCodes={
      *         200="Returned when successful",
      *         403="Not Allowed",
-     *         404="Returned when the BaseCompany is not found"
+     *         404="Returned when the Category is not found"
      *     }
      * )
      *
@@ -46,16 +46,15 @@ class CategoryController extends FOSRestController
 
     /**
      *
-     * This function is used to get a Categories by given id.
+     * This function is used to get a Categories and their Articles by ids.
      *
      * @ApiDoc(
      *  resource=true,
      *  section="Category",
-     *  description="This function is used to get a Categories by given id.",
+     *  description="This function is used to get a Categories and their Articles.",
      *  statusCodes={
      *         200="Returned when successful",
-     *         403="Not Allowed",
-     *         404="Returned when the BaseCompany is not found"
+     *         403="Not Allowed"
      *     }
      * )
      *

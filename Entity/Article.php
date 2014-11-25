@@ -39,14 +39,14 @@ class Article
      *
      * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(type="string", length=100, unique=true, nullable=false)
-     * 
+     *
      */
     private $slug;
 
     /**
      * @var string
      * @ORM\Column(name="content", type="text", nullable=true)
-     *
+     * @Groups({"content"})
      */
     private $content;
 

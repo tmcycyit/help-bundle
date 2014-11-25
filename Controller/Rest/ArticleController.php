@@ -24,20 +24,20 @@ class ArticleController extends FOSRestController
 {
     /**
      *
-     * This function is used to get a Article by given id.
+     * This function is used to get a Article's content by given id.
      *
      * @ApiDoc(
      *  resource=true,
      *  section="Article",
-     *  description="This function is used to get a Article by given id.",
+     *  description="This function is used to get a Article's content by given id.",
      *  statusCodes={
      *         200="Returned when successful",
      *         403="Not Allowed",
-     *         404="Returned when the Category is not found"
+     *         404="Returned when the Article is not found"
      *     }
      * )
      *
-     * @Rest\View(serializerGroups={"article"})
+     * @Rest\View(serializerGroups={"content"})
      * @ParamConverter("article", class="YitHelpBundle:Article")
      */
     public function getAction(Article $article){
@@ -46,16 +46,15 @@ class ArticleController extends FOSRestController
 
     /**
      *
-     * This function is used to get a Articles by given id.
+     * This function is used to get all Articles.
      *
      * @ApiDoc(
      *  resource=true,
      *  section="Article",
-     *  description="This function is used to get a Articles by given id.",
+     *  description="This function is used to get all Articles.",
      *  statusCodes={
      *         200="Returned when successful",
-     *         403="Not Allowed",
-     *         404="Returned when the Category is not found"
+     *         403="Not Allowed"
      *     }
      * )
      *
