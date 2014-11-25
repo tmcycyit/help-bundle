@@ -52,7 +52,7 @@ class Category
      *
      * @ORM\OneToMany(targetEntity="Article", mappedBy="category")
      */
-    protected $category;
+    protected $article;
 
     /**
      * @return string

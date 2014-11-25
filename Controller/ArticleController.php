@@ -25,11 +25,11 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $category = $em->getRepository('YitHelpBundle:Category')->findAllData();
-        if (!$category) {
+        $categories = $em->getRepository('YitHelpBundle:Category')->findAllData();
+        if (!$categories) {
             throw $this->createNotFoundException('No category found');
         }
-        return array('category' => $category);
+        return array('categories' => $categories);
     }
 
     /**
@@ -44,8 +44,8 @@ class ArticleController extends Controller
         if (!$articles) {
             throw $this->createNotFoundException('No article found for category');
         }
-        $category = $em->getRepository('YitHelpBundle:Category')->findAllData();
-        return array('articles' => $articles, 'category' => $category);
+        $categories = $em->getRepository('YitHelpBundle:Category')->findAllData();
+        return array('articles' => $articles, 'categories' => $categories);
     }
 
 } 

@@ -46,7 +46,7 @@ class Article
     private $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="category")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="article")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $category;
