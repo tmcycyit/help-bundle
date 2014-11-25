@@ -30,14 +30,6 @@ class ArticleAdmin extends Admin
     {
         $showMapper
             ->add('id', null, array('label' => 'ID'))
-            ->add('title', null, array('label' => 'Title'))
-            ->add('year_bd', null, array('label' => 'year_bd'))
-            ->add('description', null, array('label' => 'description'))
-            ->add('author', null, array('label' => 'author'))
-            ->add('architect', null, array('label' => 'architect'))
-            ->add('substance', null, array('label' => 'substance'))
-            ->add('insert_data', null, array('label' => 'insert_data'))
-            ->add('place', null, array('label' => 'place'))
             ->add('content', null, array('label' => 'content'))
             ->add('slug', null, array('label' => 'Slug'));
     }
@@ -76,7 +68,6 @@ class ArticleAdmin extends Admin
             ->add('category')
             ->add('content')
             ->add('slug', null, array('required' => false))
-            ->add('image', 'sonata_type_model_list', array('required' => false), array('link_parameters' => array('context' => 'default', 'provider' => 'sonata.media.provider.image')))
             ->end();
     }
 

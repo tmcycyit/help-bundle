@@ -46,12 +46,6 @@ class Article
     private $content;
 
     /**
-     * @var $image
-     * @ORM\ManyToOne(targetEntity="Yit\MediaBundle\Entity\Media", cascade={"persist"})
-     */
-    protected $image;
-
-    /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="category")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="SET NULL")
      */
@@ -150,29 +144,6 @@ class Article
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * Set image
-     *
-     * @param \Yit\MediaBundle\Entity\Media $image
-     * @return Article
-     */
-    public function setImage(\Yit\MediaBundle\Entity\Media $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \Yit\MediaBundle\Entity\Media
-     */
-    public function getImage()
-    {
-        return $this->image;
     }
 
     /**
