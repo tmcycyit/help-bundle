@@ -1,7 +1,71 @@
-{% extends 'YitHelpBundle::layout.html.twig' %}
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8" http-equiv="content-type" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('app/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css') }}">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/creativemain/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/creativemain/css/bootstrap-theme.min.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('app/bower_components/angular-motion/dist/angular-motion.min.css') }}" />
 
-{% block category %}
-    {% for categories in  category %}
-        <a href="{{ path('my_terms', {'slug':categories.slug})}}"> {{ categories.title }}<br> </a>
-    {% endfor %}
-{% endblock category %}
+            {% stylesheets output='css/complie.css'
+            'bundles/yithelp/css/yitHelp.less'
+            filter='less,cssrewrite,yui_css' %}
+            <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        <title>Help</title>
+    </head>
+<body data-ng-app="creativeApp" data-ng-controller="mainCtrl">
+    <div id="yit-help">
+        <div class="col-md-3">
+            <h1 class="yit-help-color">{{ 'help'|trans({}, 'yithelp') }}</h1>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel">
+                    <div role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a class="collapsed"
+                               data-ng-class="{'help-category':selectedCat === 'selected1'}" data-ng-click="selectedCat = 'selected1'" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                create help
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected1'}" data-ng-click="selectedTab = 'selected1'">create sketch</a>
+                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected2'}" data-ng-click="selectedTab = 'selected2'">create ad</a>
+                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected3'}" data-ng-click="selectedTab = 'selected3'">create place</a>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-ng-class="{'help-category':selectedCat === 'selected2'}" data-ng-click="selectedCat = 'selected2'" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                delete help
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected4'}" data-ng-click="selectedTab = 'selected4'">delete sketch</a>
+                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected5'}" data-ng-click="selectedTab = 'selected5'">delete ad</a>
+                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected6'}" data-ng-click="selectedTab = 'selected6'">delete place</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <h1 class="yit-help-color">delete place</h1>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="{{ asset('app/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('app/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('app/bower_components/angular/angular.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('app/bower_components/angular-translate/angular-translate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('app/bower_components/angular-strap/dist/angular-strap.min.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('app/bower_components/angular-strap/dist/angular-strap.tpl.min.js') }}" ></script>
+</body>
+</html>
