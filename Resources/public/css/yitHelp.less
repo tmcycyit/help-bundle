@@ -1,0 +1,51 @@
+@import "functions";
+
+#yit-help{
+  .yit-help-color{
+    color: #0c4948 !important;
+  }
+  h1{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .panel-group{
+    padding: 10px 0;
+    border-top: 1px solid #53abaa;
+    border-bottom: 1px solid #53abaa;
+    a{
+      display: block;
+      font-weight: 500;
+      padding: 4px 20px;
+      color: #888888;
+      &:hover{
+        padding: 4px 19px;
+        border-left:1px solid #0c4948;
+        color:#0c4948;
+        text-decoration: none;
+      }
+    }
+    .help-category{
+      padding: 4px 19px;
+      border-left:1px solid #0c4948;
+      color:#0c4948;
+    }
+
+    .panel-collapse{
+      a{
+        padding-left: 30px;
+        font-size: 14px;
+        border: 0;
+      }
+    }
+
+    .panel{
+      box-shadow: none;
+      border: 0;
+      background: none;
+    }
+    .panel+.panel{
+      margin-top: 0;
+    }
+  }
+}
