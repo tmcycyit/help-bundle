@@ -67,6 +67,7 @@ class ArticleAdmin extends Admin
             ->add('name')
             ->add('category')
             ->add('content')
+            ->add('position')
             ->add('slug', null, array('required' => false))
             ->end();
     }

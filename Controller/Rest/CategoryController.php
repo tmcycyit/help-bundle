@@ -2,7 +2,7 @@
 
 namespace Yit\HelpBundle\Controller\Rest;
 
-use Yit\HelpBundle\Entity\Article;
+use Yit\HelpBundle\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -16,58 +16,58 @@ use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 
 /**
- * @Rest\RouteResource("Article")
+ * @Rest\RouteResource("Category")
  * @Rest\Prefix("/api")
  * @Rest\NamePrefix("rest_")
  */
-class ArticleController extends FOSRestController
+class CategoryController extends FOSRestController
 {
     /**
      *
-     * This function is used to get a Article by given id.
+     * This function is used to get a Category by given id.
      *
      * @ApiDoc(
      *  resource=true,
-     *  section="Article",
-     *  description="This function is used to get a Article by given id.",
+     *  section="Category",
+     *  description="This function is used to get a Category by given id.",
      *  statusCodes={
      *         200="Returned when successful",
      *         403="Not Allowed",
-     *         404="Returned when the Category is not found"
+     *         404="Returned when the BaseCompany is not found"
      *     }
      * )
      *
-     * @Rest\View(serializerGroups={"article"})
-     * @ParamConverter("article", class="YitHelpBundle:Article")
+     * @Rest\View(serializerGroups={"category", "category_article", "article"})
+     * @ParamConverter("category", class="YitHelpBundle:Category")
      */
-    public function getAction(Article $article){
-        return $article;
+    public function getAction(Category $category){
+        return $category;
     }
 
     /**
      *
-     * This function is used to get a Articles by given id.
+     * This function is used to get a Categories by given id.
      *
      * @ApiDoc(
      *  resource=true,
-     *  section="Article",
-     *  description="This function is used to get a Articles by given id.",
+     *  section="Category",
+     *  description="This function is used to get a Categories by given id.",
      *  statusCodes={
      *         200="Returned when successful",
      *         403="Not Allowed",
-     *         404="Returned when the Category is not found"
+     *         404="Returned when the BaseCompany is not found"
      *     }
      * )
      *
-     * @Rest\View(serializerGroups={"article"})
+     * @Rest\View(serializerGroups={"category", "category_article", "article"})
      */
     public function getAllAction(){
 
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('YitHelpBundle:Article')->findAll();
+        $categories = $em->getRepository('YitHelpBundle:Category')->findAll();
 
-        return $articles;
+        return $categories;
     }
 
 }

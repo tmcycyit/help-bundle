@@ -66,6 +66,15 @@ class CategoryAdmin extends Admin
             ->with('General')
             ->add('name')
             ->add('title')
+            ->add('article', 'sonata_type_collection', array(
+                'required' => false,
+                'by_reference' => true,
+            ), array(
+                'edit' => 'inline',
+                'inline' => 'table',
+                'sortable' => 'position',
+                'admin_code' => 'yit.help.admin.article',
+            ))
             ->add('slug', null, array('required' => false))
             ->end();
     }
