@@ -17,7 +17,7 @@ use FOS\RestBundle\Controller\Annotations\Post;
 
 /**
  * @Rest\RouteResource("Article")
- * @Rest\Prefix("/api")
+ * @Rest\Prefix("/api/help")
  * @Rest\NamePrefix("rest_")
  */
 class ArticleController extends FOSRestController
