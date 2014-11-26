@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('helpApp', ['ngResource','ngSanitize']);
+angular.module('helpApp', ['ngResource','ngSanitize', 'basePath']);
