@@ -61,11 +61,16 @@ class ArticleAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-
         $formMapper
             ->with('General')
-            ->add('name')
-            ->add('category')
+            ->add('name');
+
+        if (!$this->getParentFieldDescription()) {
+            $formMapper
+                ->add('category');
+        }
+
+        $formMapper
             ->add('content')
             ->add('position')
             ->add('slug', null, array('required' => false))

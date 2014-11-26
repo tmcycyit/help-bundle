@@ -2,7 +2,7 @@ yit_help:
     resource: "@YitHelpBundle/Controller/"
     type:     annotation
     prefix:   /
-    
+
 help_article_rest:
     type:     rest
     resource: Yit\HelpBundle\Controller\Rest\ArticleController
@@ -10,4 +10,3 @@ help_article_rest:
 help_category_rest:
     type:     rest
     resource: Yit\HelpBundle\Controller\Rest\CategoryController
-

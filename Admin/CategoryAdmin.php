@@ -92,4 +92,24 @@ class CategoryAdmin extends Admin
             ->add('slug');
     }
 
+    /**
+     * @param mixed $object
+     */
+    public function prePersist($object)
+    {
+        foreach($object->getArticle() as $article) {
+            $article->setCategory($object);
+        }
+    }
+
+    /**
+     * @param mixed $object
+     */
+    public function preUpdate($object)
+    {
+        foreach($object->getArticle() as $article) {
+            $article->setCategory($object);
+        }
+    }
+
 }
