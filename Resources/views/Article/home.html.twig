@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" >
-    <head>
-        <meta charset="UTF-8" http-equiv="content-type" />
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+{% extends 'YitHelpBundle::layout.html.twig' %}
 
-            {% stylesheets output='css/complie.css'
-            'bundles/yithelp/css/jquery-ui.min.css'
-            'bundles/yithelp/css/angular-motion.min.css'
-            'bundles/yithelp/css/bootstrap.min.css'
-            'bundles/yithelp/css/bootstrap-theme.min.css'
-            'bundles/yithelp/css/yitHelp.less'
-            filter='less,cssrewrite,yui_css' %}
-            <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
-            {% endstylesheets %}
-        <title>Help</title>
-    </head>
-<body data-ng-app="helpApp" data-ng-controller="mainCtrl">
-    <div id="yit-help">
+{% block yitHelp %}
+    <div id="yit-help" data-ng-app="helpApp" data-ng-controller="mainCtrl">
         <div class="col-md-3">
             <h1 class="yit-help-color">{{ 'help'|trans({}, 'yithelp') }}</h1>
             {% verbatim %}
@@ -43,15 +27,12 @@
         </div>
     </div>
 {% endverbatim %}
-    <script src="{{ asset('bundles/yithelp/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('bundles/yithelp/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('bundles/yithelp/js/angular.min.js') }}"></script>
-    <script src="{{ asset('bundles/yithelp/js/angular-resource.min.js') }}"></script>
-    <script src="{{ asset('bundles/yithelp/js/angular-sanitize.min.js') }}"></script>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
     <script src="{{ asset('bundles/yithelp/js/angular/app.js') }}"></script>
     <script src="{{ asset('bundles/yithelp/js/angular/services/helpData.js') }}"></script>
     <script src="{{ asset('bundles/yithelp/js/angular/services/articleContent.js') }}"></script>
     <script src="{{ asset('bundles/yithelp/js/angular/controller/main.js') }}"></script>
-
-</body>
-</html>
+{% endblock %}

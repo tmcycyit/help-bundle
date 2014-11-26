@@ -1,25 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" dir="ltr" lang="en-US" xml:lang="en">
+<!DOCTYPE html>
+{% block html%}<html lang="en">{% endblock %}
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>
-    </title>
-    <meta name="description" content="Description" />
-    <meta name="keywords" content="Keywords" />
-    <link rel="stylesheet" href="/bundles/yithelp/css/style.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="/bundles/yithelp/javascript/jquery.js"></script>
-    <script type="text/javascript" src="/bundles/yithelp/javascript/script.js"></script>
-    <script type="text/javascript" src="/bundles/yithelp/javascript/slimbox2.js"></script>
-    <link rel="stylesheet" href="/bundles/yithelp/css/slimbox2.css" type="text/css" media="screen" />
+    <meta charset="UTF-8" http-equiv="content-type" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    {% block stylesheets %}
+        {% stylesheets output='css/complie.css'
+        'bundles/yithelp/css/jquery-ui.min.css'
+        'bundles/yithelp/css/angular-motion.min.css'
+        'bundles/yithelp/css/bootstrap.min.css'
+        'bundles/yithelp/css/bootstrap-theme.min.css'
+        'bundles/yithelp/css/yitHelp.less'
+        filter='less,cssrewrite,yui_css' %}
+        <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+    <title>Help</title>
 </head>
 <body>
-    {% block title %}
-    {% endblock title %}
 
-    {% block main %}{% endblock main %}
-
-    {% block category  %}{% endblock category  %}
-
+    {% block yitHelp %}{% endblock %}
+    {% block javascripts %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
+    {% endblock %}
 </body>
 </html>
