@@ -27,6 +27,13 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
+        {% if app.debug %}
+        <script src="{{ asset('app/scripts/basePath/app_devPath.js') }}"></script>
+        <script src="{{ asset('app/scripts/an-basepath/module_dev.js') }}"></script>
+        {% else %}
+        <script src="{{ asset('app/scripts/basePath/appPath.js') }}"></script>
+        <script src="{{ asset('app/scripts/an-basepath/module.js') }}"></script>
+        {% endif %}
     {% endblock %}
 </body>
 </html>
