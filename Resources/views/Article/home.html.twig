@@ -3,13 +3,11 @@
     <head>
         <meta charset="UTF-8" http-equiv="content-type" />
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('app/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css') }}">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/creativemain/css/bootstrap.min.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/creativemain/css/bootstrap-theme.min.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('app/bower_components/angular-motion/dist/angular-motion.min.css') }}" />
 
             {% stylesheets output='css/complie.css'
+            'bundles/yithelp/css/jquery-ui.min.css'
+            'bundles/yithelp/css/angular-motion.min.css'
             'bundles/yithelp/css/bootstrap.min.css'
             'bundles/yithelp/css/bootstrap-theme.min.css'
             'bundles/yithelp/css/yitHelp.less'
@@ -28,7 +26,7 @@
                         <div role="tab" id="heading{{ category.id }}">
                             <h4 class="panel-title">
                                 <a class="collapsed"
-                                   data-ng-class="{'help-category': category.open }" data-ng-click="selectCat(category)" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ category.id }}" aria-expanded="false" aria-controls="collapse{{ category.id }}">
+                                   data-ng-class="{'help-category': category.open }" data-ng-click="selectCat(category.id)" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ category.id }}" aria-expanded="false" aria-controls="collapse{{ category.id }}">
                                     {{ category.name }}
                                 </a>
                             </h4>

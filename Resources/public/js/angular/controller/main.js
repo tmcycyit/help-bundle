@@ -7,11 +7,12 @@ angular.module("helpApp")
             });
 
             $scope.selectCat = function(cat){
-                if (!angular.isDefined(cat.open)){
-                    cat.open = true;
-                } else {
-                    cat.open = !cat.open;
-                }
+                $scope.selectedCat = cat;
+//                if (!angular.isDefined(cat.open)){
+//                    cat.open = true;
+//                } else {
+//                    cat.open = !cat.open;
+//                }
             };
 
             $scope.selectTab = function(tabId, articleName){
