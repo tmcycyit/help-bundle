@@ -10,62 +10,50 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('app/bower_components/angular-motion/dist/angular-motion.min.css') }}" />
 
             {% stylesheets output='css/complie.css'
+            'bundles/yithelp/css/bootstrap.min.css'
+            'bundles/yithelp/css/bootstrap-theme.min.css'
             'bundles/yithelp/css/yitHelp.less'
             filter='less,cssrewrite,yui_css' %}
             <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
             {% endstylesheets %}
         <title>Help</title>
     </head>
-<body data-ng-app="creativeApp" data-ng-controller="mainCtrl">
+<body data-ng-app="helpApp" data-ng-controller="mainCtrl">
     <div id="yit-help">
         <div class="col-md-3">
             <h1 class="yit-help-color">{{ 'help'|trans({}, 'yithelp') }}</h1>
+            {% verbatim %}
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel">
-                    <div role="tab" id="headingOne">
-                        <h4 class="panel-title">
-                            <a class="collapsed"
-                               data-ng-class="{'help-category':selectedCat === 'selected1'}" data-ng-click="selectedCat = 'selected1'" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                create help
-                            </a>
-                        </h4>
+                    <div class="panel" data-ng-repeat="category in categorys">
+                        <div role="tab" id="heading{{ category.id }}">
+                            <h4 class="panel-title">
+                                <a class="collapsed"
+                                   data-ng-class="{'help-category': category.open }" data-ng-click="selectCat(category)" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ category.id }}" aria-expanded="false" aria-controls="collapse{{ category.id }}">
+                                    {{ category.name }}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse{{ category.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ category.id }}">
+                            <a href="#" data-ng-repeat="article in category.article" data-ng-class="{'yit-help-color':selectedTab === article.id }" data-ng-click="selectTab(article.id, article.name)">{{ article.name }}</a>
+                        </div>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected1'}" data-ng-click="selectedTab = 'selected1'">create sketch</a>
-                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected2'}" data-ng-click="selectedTab = 'selected2'">create ad</a>
-                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected3'}" data-ng-click="selectedTab = 'selected3'">create place</a>
-                    </div>
-                </div>
-                <div class="panel">
-                    <div role="tab" id="headingTwo">
-                        <h4 class="panel-title">
-                            <a class="collapsed" data-ng-class="{'help-category':selectedCat === 'selected2'}" data-ng-click="selectedCat = 'selected2'" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                delete help
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected4'}" data-ng-click="selectedTab = 'selected4'">delete sketch</a>
-                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected5'}" data-ng-click="selectedTab = 'selected5'">delete ad</a>
-                        <a href="#" data-ng-class="{'yit-help-color':selectedTab === 'selected6'}" data-ng-click="selectedTab = 'selected6'">delete place</a>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="col-md-9">
-            <h1 class="yit-help-color">delete place</h1>
+            <h1 class="yit-help-color">{{ articleName }}</h1>
+            <div data-ng-bind-html="content.content"></div>
         </div>
     </div>
+{% endverbatim %}
+    <script src="{{ asset('bundles/yithelp/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/yithelp/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/yithelp/js/angular.min.js') }}"></script>
+    <script src="{{ asset('bundles/yithelp/js/angular-resource.min.js') }}"></script>
+    <script src="{{ asset('bundles/yithelp/js/angular-sanitize.min.js') }}"></script>
+    <script src="{{ asset('bundles/yithelp/js/angular/app.js') }}"></script>
+    <script src="{{ asset('bundles/yithelp/js/angular/services/helpData.js') }}"></script>
+    <script src="{{ asset('bundles/yithelp/js/angular/services/articleContent.js') }}"></script>
+    <script src="{{ asset('bundles/yithelp/js/angular/controller/main.js') }}"></script>
 
-
-
-
-
-    <script type="text/javascript" src="{{ asset('app/bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('app/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('app/bower_components/angular/angular.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('app/bower_components/angular-translate/angular-translate.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('app/bower_components/angular-strap/dist/angular-strap.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('app/bower_components/angular-strap/dist/angular-strap.tpl.min.js') }}" ></script>
 </body>
 </html>
