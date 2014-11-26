@@ -11,7 +11,7 @@ use JMS\Serializer\Annotation\Groups;
 /**
  * Category
  *
- * @ORM\Table(name="category")
+ * @ORM\Table(name="yit_help_category")
  * @ORM\Entity(repositoryClass="Yit\HelpBundle\Entity\Repository\CategoryRepository")
  * @ORM\HasLifecycleCallbacks()
  */

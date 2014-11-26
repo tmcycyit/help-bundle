@@ -18,7 +18,7 @@ class ArticleController extends Controller
 {
 
     /**
-     * @Route("/", name="yit_content_homepage")
+     * @Route("/help", name="yit_content_homepage")
      * @Template()"
      */
     public function homeAction()
@@ -33,7 +33,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * @Route("/article/{slug}", name="my_terms")
+     * @Route("/help/article/{slug}", name="my_terms")
      * @Template()
      */
     public function showAction($slug)

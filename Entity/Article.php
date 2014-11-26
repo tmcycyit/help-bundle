@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation\Groups;
 /**
  * Article
  *
- * @ORM\Table(name="article")
+ * @ORM\Table(name="yit_help_article")
  * @ORM\Entity(repositoryClass="Yit\HelpBundle\Entity\Repository\ArticleRepository")
  * @ORM\HasLifecycleCallbacks()
  */
