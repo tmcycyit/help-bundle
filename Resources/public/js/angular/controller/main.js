@@ -6,13 +6,13 @@ angular.module("helpApp")
                 $scope.categorys = data;
             });
 
-            $scope.selectCat = function(cat){
-//                $scope.selectedCat = cat;
-                if (!angular.isDefined(cat.open)){
-                    cat.open = true;
+            $scope.selectCat = function(catId){
+                if ($scope.selectedCat === catId){
+                    $scope.selectedCat = "";
                 } else {
-                    cat.open = !cat.open;
+                    $scope.selectedCat = catId;
                 }
+
             };
 
             $scope.selectTab = function(tabId, articleName){
