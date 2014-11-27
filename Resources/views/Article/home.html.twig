@@ -1,7 +1,16 @@
 {% extends 'YitHelpBundle::layout.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets output='css/help.css'
+    'bundles/yithelp/css/yitHelp.less'
+    filter='less,cssrewrite,yui_css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
 {% block yitHelp %}
-    <div id="yit-help" data-ng-app="helpApp" data-ng-controller="mainCtrl">
+    <div id="yit-help" data-ng-app="helpApp" data-ng-controller="yitHelpCtrl">
         <div class="col-md-3">
             <h1 class="yit-help-color">{{ 'help'|trans({}, 'yithelp') }}</h1>
             {% verbatim %}

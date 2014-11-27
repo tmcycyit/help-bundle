@@ -11,7 +11,6 @@
         'bundles/yithelp/css/angular-motion.min.css'
         'bundles/yithelp/css/bootstrap.min.css'
         'bundles/yithelp/css/bootstrap-theme.min.css'
-        'bundles/yithelp/css/yitHelp.less'
         filter='less,cssrewrite,yui_css' %}
         <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
         {% endstylesheets %}
@@ -28,11 +27,9 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
         {% if app.debug %}
-        <script src="{{ asset('bundles/yithelp/js/basePath/app_devPath.js') }}"></script>
-        <script src="{{ asset('bundles/yithelp/js/an-basepath/module_dev.js') }}"></script>
+            <script src="{{ asset('bundles/yithelp/js/basePath/app_devPath.js') }}"></script>
         {% else %}
-        <script src="{{ asset('bundles/yithelp/js/basePath/appPath.js') }}"></script>
-        <script src="{{ asset('bundles/yithelp/js/an-basepath/module.js') }}"></script>
+            <script src="{{ asset('bundles/yithelp/js/basePath/appPath.js') }}"></script>`
         {% endif %}
     {% endblock %}
 </body>

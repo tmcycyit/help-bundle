@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("helpApp")
-    .controller('mainCtrl', ['$scope','helpData', 'articleContent', function($scope,helpData,articleContent) {
+    .controller('yitHelpCtrl', ['$scope','helpData', 'articleContent', function($scope,helpData,articleContent) {
             helpData.data({},function(data){
                 $scope.categorys = data;
             });
