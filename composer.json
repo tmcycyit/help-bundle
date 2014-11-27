@@ -11,7 +11,7 @@
         "jms/serializer-bundle": "0.12.*",
         "nelmio/api-doc-bundle": "2.4.*",
         "stof/doctrine-extensions-bundle": "1.1.*",
-        "stfalcon/tinymce-bundle": "0.3.*"
+        "stfalcon/tinymce-bundle": "0.3.7"
     },
 
     "target-dir": "Yit/HelpBundle"
