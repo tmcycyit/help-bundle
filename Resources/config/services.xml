@@ -7,7 +7,7 @@
     <services>
         <!-- category -->
         <service id="yit.help.admin.category" class="Yit\HelpBundle\Admin\CategoryAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Menu" label="Category"/>
+            <tag name="sonata.admin" manager_type="orm" group="Yit Help" label="Category"/>
             <argument/>
             <argument>Yit\HelpBundle\Entity\Category</argument>
             <argument>SonataAdminBundle:CRUD</argument>
@@ -20,7 +20,7 @@
         </service>
         <!-- article -->
         <service id="yit.help.admin.article" class="Yit\HelpBundle\Admin\ArticleAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Menu" label="Article"/>
+            <tag name="sonata.admin" manager_type="orm" group="Yit Help" label="Article"/>
             <argument/>
             <argument>Yit\HelpBundle\Entity\Article</argument>
             <argument>SonataAdminBundle:CRUD</argument>
