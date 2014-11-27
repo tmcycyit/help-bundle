@@ -94,22 +94,27 @@ class CategoryAdmin extends Admin
 
     /**
      * @param mixed $object
+     * @return mixed|void
      */
     public function prePersist($object)
     {
-        foreach($object->getArticle() as $article) {
-            $article->setCategory($object);
+        if($object->getArticle()){
+            foreach($object->getArticle() as $article) {
+                $article->setCategory($object);
+            }
         }
     }
 
     /**
      * @param mixed $object
+     * @return mixed|void
      */
     public function preUpdate($object)
     {
-        foreach($object->getArticle() as $article) {
-            $article->setCategory($object);
+        if($object->getArticle()){
+            foreach($object->getArticle() as $article) {
+                $article->setCategory($object);
+            }
         }
     }
-
 }

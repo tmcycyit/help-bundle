@@ -25,4 +25,31 @@ class YitHelpExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
     }
+
+    public function prepend(ContainerBuilder $container)
+    {
+        // get all Bundles
+        $bundles = $container->getParameter('kernel.bundles');
+
+        // Get configuration of our own bundle
+        $configs = $container->getExtensionConfig($this->getAlias());
+        $config = $this->processConfiguration(new Configuration(), $configs);
+
+        if (isset($bundles['AsseticBundle'])) //is assetic bundle set
+        {
+            //array for assetic
+            $insertionForAssetic = array('bundles' => array( 'YitHelpBundle' ));
+
+            // insert assetic bundle name  into config.yml
+            foreach ($container->getExtensions() as $name => $extension)
+            {
+                switch ($name)
+                {
+                    case 'assetic':
+                        $container->prependExtensionConfig($name, $insertionForAssetic);
+                        break;
+                }
+            }
+        }
+    }
 }
