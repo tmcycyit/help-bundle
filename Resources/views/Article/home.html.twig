@@ -25,7 +25,7 @@
                             </h4>
                         </div>
                         <div id="collapse{{ category.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ category.id }}">
-                            <a href="#" data-ng-repeat="article in category.article" data-ng-class="{'yit-help-color':selectedTab === article.id }" data-ng-click="selectTab(article.id, article.name)">{{ article.name }}</a>
+                            <span data-ng-repeat="article in category.article" data-ng-class="{'yit-help-color':selectedTab === article.id }" data-ng-click="selectTab(article.id, article.name)">{{ article.name }}</span>
                         </div>
                     </div>
             </div>
