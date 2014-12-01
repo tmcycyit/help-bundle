@@ -26,6 +26,9 @@ class YitHelpExtension extends Extension
         $loader->load('services.xml');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function prepend(ContainerBuilder $container)
     {
         // get all Bundles
