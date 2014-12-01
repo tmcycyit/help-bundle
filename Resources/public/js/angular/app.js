@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('helpApp', ['ngResource','ngSanitize', 'basePath']);
+angular.module('helpApp', [ 'ngAnimate', 'ngResource','ngSanitize', 'basePath', 'mgcrea.ngStrap']);
