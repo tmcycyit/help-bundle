@@ -44,7 +44,6 @@ class ArticleAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name', null, array('label' => 'Name'))
-            ->add('content')
             ->add('slug')
             ->add('_action', 'actions', array('actions' => array(
                 'show' => array(),
