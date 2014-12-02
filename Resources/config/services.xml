@@ -13,7 +13,7 @@
             <argument>SonataAdminBundle:CRUD</argument>
             <call method="setTemplates">
                 <argument type="collection">
-                    <argument key="edit">YitHelpBundle:Admin:edit_i18n.html.twig</argument>
+                    <argument key="edit">YitHelpBundle:Admin:edit_help.html.twig</argument>
                     <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
                 </argument>
             </call>
@@ -26,8 +26,21 @@
             <argument>SonataAdminBundle:CRUD</argument>
             <call method="setTemplates">
                 <argument type="collection">
-                    <argument key="edit">YitHelpBundle:Admin:edit_i18n.html.twig</argument>
+                    <argument key="edit">YitHelpBundle:Admin:edit_help.html.twig</argument>
                     <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
+                </argument>
+            </call>
+        </service>
+        <!-- help photo -->
+        <service id="yit.help.admin.help.photo" class="Yit\HelpBundle\Admin\HelpPhotoAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Yit Help" label="Photo"/>
+            <argument/>
+            <argument>Yit\HelpBundle\Entity\HelpPhoto</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+            <call method="setTemplates">
+                <argument type="collection">
+                    <argument key="edit">YitHelpBundle:Admin:edit_help.html.twig</argument>
+                    <argument key="show">YitHelpBundle:Admin:show_help.html.twig</argument>
                 </argument>
             </call>
         </service>

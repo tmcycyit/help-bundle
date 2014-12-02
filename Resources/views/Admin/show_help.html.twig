@@ -1,0 +1,9 @@
+{% extends 'SonataAdminBundle:CRUD:show.html.twig' %}
+
+ {% block sonata_page_content %}
+
+     {% if object.getOriginalPath() is defined and object.getOriginalPath() is not null %}
+         <img width="400" src="{{ asset(object.getOriginalPath()) }}">
+     {% endif %}
+     {{parent()}}
+ {% endblock %}
