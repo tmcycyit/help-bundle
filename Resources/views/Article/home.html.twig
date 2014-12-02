@@ -2,9 +2,6 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/main.min.css">
     {% stylesheets output='css/help.css'
     'bundles/yithelp/css/yitHelp.less'
     filter='less,cssrewrite,yui_css' %}
@@ -14,29 +11,29 @@
 
 {% block yitHelp %}
     <div id="yit-help" data-ng-app="helpApp" data-ng-controller="yitHelpCtrl">
-        <div class="col-md-3">
-            <h1 class="yit-help-color">{{ 'help'|trans({}, 'yithelp') }}</h1>
-            {% verbatim %}
-            <div class="panel-group" data-ng-model="undifined" data-bs-collapse>
-                <div class="panel panel-default" data-ng-repeat="category in categorys">
-                    <h4 class="panel-title">
+    <div class="col-md-3">
+    <h1 class="yit-help-color">{{ 'help'|trans({}, 'yithelp') }}</h1>
+    {% verbatim %}
+    <div class="panel-group" data-ng-model="undifined" data-bs-collapse>
+        <div class="panel panel-default" data-ng-repeat="category in categorys">
+            <h4 class="panel-title">
                         <span data-bs-collapse-toggle
-                            data-ng-class="{'help-category': selectedCat === category.id }" data-ng-click="selectCat(category.id)">
+                              data-ng-class="{'help-category': selectedCat === category.id }" data-ng-click="selectCat(category.id)">
                             {{ category.name }}
                         </span>
-                    </h4>
-                    <div class="panel-collapse collapse am-collapse" data-bs-collapse-target>
-                        <span data-ng-repeat="article in category.article" data-ng-class="{'yit-help-color':selectedTab === article.id }" data-ng-click="selectTab(article.id, article.name)">{{ article.name }}</span>
-                    </div>
-                </div>
+            </h4>
+            <div class="panel-collapse collapse am-collapse" data-bs-collapse-target>
+                <span data-ng-repeat="article in category.article" data-ng-class="{'yit-help-color':selectedTab === article.id }" data-ng-click="selectTab(article.id, article.name)">{{ article.name }}</span>
             </div>
         </div>
-        <div class="col-md-9">
-            <h1 class="yit-help-color">{{ articleName }}</h1>
-            <div data-ng-bind-html="content.content"></div>
-        </div>
     </div>
-{% endverbatim %}
+    </div>
+    <div class="col-md-9">
+        <h1 class="yit-help-color">{{ articleName }}</h1>
+        <div data-ng-bind-html="content.content"></div>
+    </div>
+    </div>
+    {% endverbatim %}
 
 {% endblock %}
 {% block javascripts %}

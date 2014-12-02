@@ -26,15 +26,13 @@ a{cursor: pointer;}
     border-top: 1px solid #53abaa;
     border-bottom: 1px solid #53abaa;
 
-    span{
+    a{
       display: block;
       font-weight: 500;
       padding: 4px 20px;
       color: #888888;
-      .rounded-corners(0);
       &:hover{
         padding: 4px 19px;
-        .rounded-corners(0);
         border-left:1px solid #0c4948;
         color:#0c4948;
         text-decoration: none;
@@ -43,7 +41,6 @@ a{cursor: pointer;}
     }
     .help-category{
       padding: 4px 19px;
-      .rounded-corners(0);
       border-left:1px solid #0c4948;
       color:#0c4948;
     }
@@ -68,6 +65,7 @@ a{cursor: pointer;}
       box-shadow: none;
       border: 0;
       background: none;
+      .rounded-corners(0);
     }
     .panel+.panel{
       margin-top: 0;

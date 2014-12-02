@@ -4,23 +4,27 @@
     <meta charset="UTF-8" http-equiv="content-type" />
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/main.min.css">
+    {% endblock %}
     <title>Help</title>
 </head>
 <body>
-    {% block yitHelp %}{% endblock %}
-    {% block javascripts %}
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.tpl.min.js"></script>
-        {% if app.debug %}
-            <script src="{{ asset('bundles/yithelp/js/basePath/app_devPath.js') }}"></script>
-        {% else %}
-            <script src="{{ asset('bundles/yithelp/js/basePath/appPath.js') }}"></script>
-        {% endif %}
-    {% endblock %}
+{% block yitHelp %}{% endblock %}
+{% block javascripts %}
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.tpl.min.js"></script>
+    {% if app.debug %}
+    <script src="{{ asset('bundles/yithelp/js/basePath/app_devPath.js') }}"></script>
+    {% else %}
+    <script src="{{ asset('bundles/yithelp/js/basePath/appPath.js') }}"></script>
+    {% endif %}
+{% endblock %}
 </body>
 </html>
