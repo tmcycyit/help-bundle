@@ -18,6 +18,7 @@ HelpBundle used following modules to overwrite base template
 3. ngSanitize
 4. ngAnimate
 5. ngStrap
+6. Bootstrap CSS
 ```
 
 Add HelpBundle in your composer.json:
