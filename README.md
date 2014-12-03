@@ -12,7 +12,7 @@ HelpBundle used following bundles(see HelpBundle's composer.json):
 ```
 
 ```
-HelpBundle used following modules to overwrite base template
+HelpBundle used following modules to overwrite base template (see HelpBundle's layout.html.twig):
 1. angular
 2. ngResource
 3. ngSanitize
