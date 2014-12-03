@@ -31,7 +31,7 @@ class YitHelpExtension extends Extension implements PrependExtensionInterface
      * {@inheritDoc}
      */
     public function prepend(ContainerBuilder $container)
-    { 
+    {
         // get all Bundles
         $bundles = $container->getParameter('kernel.bundles');
 
