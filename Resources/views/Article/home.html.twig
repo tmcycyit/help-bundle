@@ -17,10 +17,10 @@
             <div class="panel-group" data-ng-model="undifined" data-bs-collapse>
                 <div class="panel panel-default" data-ng-repeat="category in categorys">
                     <h4 class="panel-title">
-                        <span data-bs-collapse-toggle
-                              data-ng-class="{'help-category': selectedCat === category.id }" data-ng-click="selectCat(category.id)">
-                            {{ category.name }}
-                        </span>
+                                <span data-bs-collapse-toggle
+                                      data-ng-class="{'help-category': selectedCat === category.id }" data-ng-click="selectCat(category.id)">
+                                    {{ category.name }}
+                                </span>
                     </h4>
                     <div class="panel-collapse collapse am-collapse" data-bs-collapse-target>
                         <span data-ng-repeat="article in category.article" data-ng-class="{'yit-help-color':selectedTab === article.id }" data-ng-click="selectTab(article.id, article.name)">{{ article.name }}</span>
@@ -34,10 +34,10 @@
         </div>
     </div>
     {% endverbatim %}
-
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('bundles/yithelp/js/basePath/appPath.js') }}"></script>
     <script src="{{ asset('bundles/yithelp/js/angular/app.js') }}"></script>
     <script src="{{ asset('bundles/yithelp/js/angular/services/helpData.js') }}"></script>
     <script src="{{ asset('bundles/yithelp/js/angular/services/articleContent.js') }}"></script>
