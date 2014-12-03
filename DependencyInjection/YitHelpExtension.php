@@ -37,7 +37,7 @@ class YitHelpExtension extends Extension implements PrependExtensionInterface
         }
 
         //insert secure
-        $container->setParameter($this->getAlias() . '.secure', $secure);
+        $container->setParameter($this->getAlias() . '.help_secure', $secure);
     }
 
     /**

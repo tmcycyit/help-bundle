@@ -6,6 +6,7 @@ use Yit\HelpBundle\Entity\Article;
 use Yit\HelpBundle\Entity\Category;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\Request;
+
 use Symfony\Component\Validator\Constraints as Assert;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -23,10 +24,13 @@ class ArticleController extends Controller
      */
     public function homeAction()
     {
-        $user = $this->getUser(); // get current user
-        if(!$user)
+        if ($this->container->getParameter('yit_help.help_secure'))
         {
-            throw $this->createNotFoundException("User Not Found, You must authenticate first ");
+            $user = $this->getUser(); // get current user
+            if(!$user)
+            {
+                throw $this->createNotFoundException("User Not Found, You must authenticate first ");
+            }
         }
 
         $em = $this->getDoctrine()->getManager();
@@ -44,10 +48,13 @@ class ArticleController extends Controller
      */
     public function showAction($slug)
     {
-        $user = $this->getUser(); // get current user
-        if(!$user)
+        if ($this->container->getParameter('yit_help.help_secure'))
         {
-            throw $this->createNotFoundException("User Not Found, You must authenticate first ");
+            $user = $this->getUser(); // get current user
+            if(!$user)
+            {
+                throw $this->createNotFoundException("User Not Found, You must authenticate first ");
+            }
         }
 
         $em = $this->getDoctrine()->getManager();
