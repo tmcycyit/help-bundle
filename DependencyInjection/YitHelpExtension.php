@@ -25,6 +25,19 @@ class YitHelpExtension extends Extension implements PrependExtensionInterface
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        //get secure from config
+        if(isset($config['secure']))
+        {
+            $secure = $config['secure']; // if set, get from config
+        }
+        else
+        {
+            $secure = true; // else set default value
+        }
+
+        //insert secure
+        $container->setParameter($this->getAlias() . '.secure', $secure);
     }
 
     /**

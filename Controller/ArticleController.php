@@ -23,6 +23,12 @@ class ArticleController extends Controller
      */
     public function homeAction()
     {
+        $user = $this->getUser(); // get current user
+        if(!$user)
+        {
+            throw $this->createNotFoundException("User Not Found, You must authenticate first ");
+        }
+
         $em = $this->getDoctrine()->getManager();
 
         $categories = $em->getRepository('YitHelpBundle:Category')->findAllData();
@@ -38,6 +44,12 @@ class ArticleController extends Controller
      */
     public function showAction($slug)
     {
+        $user = $this->getUser(); // get current user
+        if(!$user)
+        {
+            throw $this->createNotFoundException("User Not Found, You must authenticate first ");
+        }
+
         $em = $this->getDoctrine()->getManager();
 
         $articles = $em->getRepository('YitHelpBundle:Article')->findAllData($slug);
