@@ -75,6 +75,14 @@ stof_doctrine_extensions:
             sluggable: true
 ```
 
+If project don't have user authentication, add following configuration to your `config.yml` file
+
+``` yaml
+# app/config/config.yml
+yit_help:
+    secure: false
+```
+
 ###Step 4: Import HelpBundle routing files
 
 ``` yaml
