@@ -75,6 +75,8 @@ stof_doctrine_extensions:
             sluggable: true
 ```
 
+### Step 3.1: Configure the HelpBundle
+
 If project don't have user authentication, add following configuration to your `config.yml` file
 
 ``` yaml
