@@ -168,14 +168,12 @@ class HelpPhoto
         }
     }
 
-
-
     /**
      * @return string
      */
     public function getUploadRootDir()
     {
-        return __DIR__.'/../../../../web/' . $this->getPath();
+        return __DIR__.'/../../../../../../web' . $this->getPath();
     }
 
     /**
