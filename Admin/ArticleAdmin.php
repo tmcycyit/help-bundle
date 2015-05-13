@@ -44,7 +44,13 @@ class ArticleAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name', null, array('label' => 'Name'))
-            ->add('slug')
+            ->add('slug');
+
+        if (!$this->getParentFieldDescription()) {
+            $listMapper
+                ->add('category');
+        }
+        $listMapper
             ->add('_action', 'actions', array('actions' => array(
                 'show' => array(),
                 'edit' => array(),
