@@ -59,13 +59,19 @@ Add the following configuration to your `config.yml` file
 ``` yaml
 # app/config/config.yml
 stfalcon_tinymce:
-        theme:
-            simple:
-                 plugins:
-                     - "template paste textcolor"
-                     - "image"
-                 toolbar1: "styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-                 toolbar2: "print preview media | forecolor backcolor emoticons | stfalcon | example"
+    include_jquery:       false
+    tinymce_jquery:       false
+    theme:
+          # Simple theme: same as default theme
+          simple:
+               plugins:
+                   - "advlist autolink lists link image charmap print preview hr anchor pagebreak"
+                   - "searchreplace wordcount visualblocks visualchars code fullscreen"
+                   - "insertdatetime media nonbreaking save table contextmenu directionality"
+                   - "emoticons template paste textcolor"
+               toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+               toolbar2: "print preview media | forecolor backcolor emoticons | stfalcon | example"
+               image_advtab: true
 
 stof_doctrine_extensions:
     default_locale: en_EN
