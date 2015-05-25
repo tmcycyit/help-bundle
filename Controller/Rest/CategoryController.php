@@ -64,7 +64,7 @@ class CategoryController extends FOSRestController
 
         $em = $this->getDoctrine()->getManager();
 
-        $categories = $em->getRepository('YitHelpBundle:Category')->findAll();
+        $categories = $em->getRepository('YitHelpBundle:Category')->findAllData();
 
         return $categories;
     }

@@ -17,9 +17,10 @@ class CategoryRepository extends EntityRepository
     public function findAllData()
     {
         return $this->getEntityManager()
-            ->createQuery("SELECT art, category
-                           FROM YitHelpBundle:Article art
-                           LEFT JOIN art.category category
+            ->createQuery("SELECT category, art
+                           FROM YitHelpBundle:Category category
+                           LEFT JOIN category.article art
+                           ORDER BY category.position ASC
             ")
             ->getResult();
     }

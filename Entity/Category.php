@@ -63,7 +63,7 @@ class Category
     /**
      * @var int $position
      *
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=false)
      *
      */
     protected  $position;

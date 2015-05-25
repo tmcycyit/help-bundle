@@ -26,7 +26,8 @@ class ArticleController extends Controller
     {
         if ($this->container->getParameter('yit_help.help_secure'))
         {
-            $user = $this->getUser(); // get current user
+            // get current user
+            $user = $this->getUser();
             if(!$user)
             {
                 throw $this->createNotFoundException("User Not Found, You must authenticate first ");
@@ -50,7 +51,8 @@ class ArticleController extends Controller
     {
         if ($this->container->getParameter('yit_help.help_secure'))
         {
-            $user = $this->getUser(); // get current user
+            // get current user
+            $user = $this->getUser();
             if(!$user)
             {
                 throw $this->createNotFoundException("User Not Found, You must authenticate first ");

@@ -31,7 +31,8 @@ class CategoryAdmin extends Admin
         $showMapper
             ->add('id', null, array('label' => 'ID'))
             ->add('title', null, array('label' => 'Title'))
-            ->add('slug', null, array('label' => 'Slug'));
+            ->add('slug', null, array('label' => 'Slug'))
+            ->add('position', null, array('label' => 'Position'));
     }
 
     /**
@@ -46,6 +47,7 @@ class CategoryAdmin extends Admin
             ->addIdentifier('name', null, array('label' => 'Name'))
             ->add('title')
             ->add('slug')
+            ->add('position')
             ->add('_action', 'actions', array('actions' => array(
                 'show' => array(),
                 'edit' => array(),
@@ -66,6 +68,7 @@ class CategoryAdmin extends Admin
             ->with('General')
             ->add('name')
             ->add('title')
+            ->add('position')
             ->add('slug', null, array('required' => false))
             ->add('article', 'sonata_type_collection', array(
                 'required' => false,
