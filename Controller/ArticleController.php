@@ -21,6 +21,7 @@ class ArticleController extends Controller
     /**
      * @Route("/help", name="yit_content_homepage")
      * @Template()"
+     * @Secure(roles="ROLE_USER")
      */
     public function homeAction()
     {
