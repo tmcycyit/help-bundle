@@ -6,7 +6,7 @@ use Yit\HelpBundle\Entity\Article;
 use Yit\HelpBundle\Entity\Category;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\Request;
-
+use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Component\Validator\Constraints as Assert;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
