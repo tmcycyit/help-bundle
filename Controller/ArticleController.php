@@ -45,30 +45,4 @@ class ArticleController extends Controller
         return array('categories' => $categories);
     }
 
-    /**
-     * @Route("/help/article/{slug}", name="my_terms")
-     * @Template()
-     */
-    public function showAction($slug)
-    {
-        if ($this->container->getParameter('yit_help.help_secure'))
-        {
-            // get current user
-            $user = $this->getUser();
-            if(!$user)
-            {
-                throw $this->createNotFoundException("User Not Found, You must authenticate first ");
-            }
-        }
-
-        $em = $this->getDoctrine()->getManager();
-
-        $articles = $em->getRepository('YitHelpBundle:Article')->findAllData($slug);
-        if (!$articles) {
-            throw $this->createNotFoundException('No article found for category');
-        }
-        $categories = $em->getRepository('YitHelpBundle:Category')->findAllData();
-        return array('articles' => $articles, 'categories' => $categories);
-    }
-
 } 

@@ -13,7 +13,7 @@ angular.module("helpApp")
                 var url = $window.location.pathname;
                 var subUrl = url.substring(url.indexOf('/help/') + 6, url.length);
                 var params = subUrl.split('/');
-                if(params.length === 2){
+                if(params.length === 2 && url.indexOf('/help/') !== -1){
                     var categoryName = params[0];
                     var articleId = parseInt(params[1]);
                     var articleName = null;
@@ -26,8 +26,17 @@ angular.module("helpApp")
                             });
                         }
                     });
-
                     $scope.selectTab(articleId,articleName);
+                }
+                else if($scope.categorys.length) {
+                    var catName = null, artId = null;
+                    angular.forEach($scope.categorys,function(v){
+                        if(v.article.length){
+                            catName = v.name;
+                            artId = v.article[0].id;
+                        }
+                    });
+                    $scope.redirectTo(catName, artId);
                 }
             });
 
@@ -50,7 +59,7 @@ angular.module("helpApp")
 
             $scope.redirectTo = function(categoryName, articleId){
                 var url = $window.location.pathname ;
-                var subUrl = url.substring(0,url.indexOf('/help'));
+                var subUrl = url.substring(0, url.indexOf('/help'));
                 $window.location.href = $window.location.origin + subUrl+ "/help/" + categoryName + "/" + articleId;
             }
 
