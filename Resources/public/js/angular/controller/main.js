@@ -14,11 +14,11 @@ angular.module("helpApp")
                 var subUrl = url.substring(url.indexOf('/help/') + 6, url.length);
                 var params = subUrl.split('/');
                 if(params.length === 2 && url.indexOf('/help/') !== -1){
-                    var categorySlug = params[0];
+                    var categoryName = params[0];
                     var articleId = parseInt(params[1]);
                     var articleName = null;
                     angular.forEach($scope.categorys,function(cv){
-                        if(cv.name.toLowerCase() === categorySlug.toLowerCase()){
+                        if(cv.name.toLowerCase() === categoryName.toLowerCase()){
                             angular.forEach(cv.article,function(av){
                                 if(av.id === articleId){
                                     articleName = av.name;
@@ -57,10 +57,10 @@ angular.module("helpApp")
                 });
             };
 
-            $scope.redirectTo = function(categorySlug, articleId){
+            $scope.redirectTo = function(categoryName, articleId){
                 var url = $window.location.pathname ;
                 var subUrl = url.substring(0, url.indexOf('/help'));
-                $window.location.href = $window.location.origin + subUrl+ "/help/" + categorySlug + "/" + articleId;
+                $window.location.href = $window.location.origin + subUrl+ "/help/" + categoryName + "/" + articleId;
             }
 
     }
