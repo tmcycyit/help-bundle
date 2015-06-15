@@ -48,6 +48,7 @@ class Category
      *
      * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(type="string", length=100, unique=true, nullable=false)
+     * @Groups({"category"})
      *
      */
     private $slug;

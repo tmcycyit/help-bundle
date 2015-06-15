@@ -14,11 +14,11 @@ angular.module("helpApp")
                 var subUrl = url.substring(url.indexOf('/help/') + 6, url.length);
                 var params = subUrl.split('/');
                 if(params.length === 2 && url.indexOf('/help/') !== -1){
-                    var categoryName = params[0];
+                    var categorySlug = params[0];
                     var articleId = parseInt(params[1]);
                     var articleName = null;
                     angular.forEach($scope.categorys,function(cv){
-                        if(cv.name.toLowerCase() === categoryName.toLowerCase()){
+                        if(cv.slug.toLowerCase() === categorySlug.toLowerCase()){
                             angular.forEach(cv.article,function(av){
                                 if(av.id === articleId){
                                     articleName = av.name;
@@ -29,14 +29,14 @@ angular.module("helpApp")
                     $scope.selectTab(articleId,articleName);
                 }
                 else if($scope.categorys.length) {
-                    var catName = null, artId = null;
+                    var catSlug = null, artId = null;
                     angular.forEach($scope.categorys,function(v){
                         if(v.article.length && artId === null){
-                            catName = v.name;
+                            catSlug = v.slug;
                             artId = v.article[0].id;
                         }
                     });
-                    $scope.redirectTo(catName, artId);
+                    $scope.redirectTo(catSlug, artId);
                 }
             });
 
@@ -57,10 +57,10 @@ angular.module("helpApp")
                 });
             };
 
-            $scope.redirectTo = function(categoryName, articleId){
+            $scope.redirectTo = function(categorySlug, articleId){
                 var url = $window.location.pathname ;
                 var subUrl = url.substring(0, url.indexOf('/help'));
-                $window.location.href = $window.location.origin + subUrl+ "/help/" + categoryName + "/" + articleId;
+                $window.location.href = $window.location.origin + subUrl+ "/help/" + categorySlug + "/" + articleId;
             }
 
     }

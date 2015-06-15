@@ -23,7 +23,7 @@
                         </span>
                     </h4>
                     <div class="panel-collapse collapse am-collapse" data-bs-collapse-target>
-                        <span data-ng-repeat="article in category.article" data-ng-class="{'yit-help-color':selectedTab === article.id }" data-ng-click="redirectTo(category.name,article.id)">{{ article.name }}</span>
+                        <span data-ng-repeat="article in category.article" data-ng-class="{'yit-help-color':selectedTab === article.id }" data-ng-click="redirectTo(category.slug,article.id)">{{ article.name }}</span>
                     </div>
                 </div>
             </div>
