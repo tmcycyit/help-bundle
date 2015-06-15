@@ -64,4 +64,19 @@ angular.module("helpApp")
             }
 
     }
-]);
+])
+    .directive("yitCompileHtml",['$compile',function($compile){
+        return {
+            restrict: 'EA',
+            scope: {
+                html: '=yitCompileHtml'
+            },
+            compile: function(){
+                return function(scope, el){
+                    scope.$watch('html',function(d){
+                        el.append($compile(scope.html)(scope))
+                    },true)
+                }
+            }
+        }
+    }]);
