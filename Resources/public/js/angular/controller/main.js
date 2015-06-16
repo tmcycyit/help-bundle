@@ -26,7 +26,7 @@ angular.module("helpApp")
                             });
                         }
                     });
-                    $scope.selectTab(articleId,articleName);
+                    $scope.selectTab(articleId);
                 }
                 else if($scope.categorys.length) {
                     var catSlug = null, artId = null;
@@ -36,7 +36,7 @@ angular.module("helpApp")
                             artId = v.article[0].id;
                         }
                     });
-                    $scope.redirectTo(catSlug, artId);
+                    $scope.selectTab(artId);
                 }
             });
 
@@ -49,11 +49,11 @@ angular.module("helpApp")
 
             };
 
-            $scope.selectTab = function(tabId, articleName){
+            $scope.selectTab = function(tabId){
                 $scope.selectedTab = tabId;
-                $scope.articleName = articleName;
-                articleContent.content({'article': $scope.selectedTab},{}, function(content){
-                    $scope.content = content;
+                articleContent.content({'article': $scope.selectedTab},{}, function(data){
+                    $scope.articleName = data.name;
+                    $scope.content = data.content;
                 });
             };
 

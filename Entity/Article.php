@@ -30,7 +30,7 @@ class Article
      * @var string name
      *
      * @ORM\Column(type="string", length=100, nullable=false)
-     * @Groups({"article"})
+     * @Groups({"article", "content"})
      */
     private $name = '';
 
