@@ -17,13 +17,19 @@ angular.module("helpApp")
                     var categorySlug = params[0];
                     var articleId = parseInt(params[1]);
                     var articleName = null;
+                    $scope.activePanel = 0;
+                    $scope.activePanelAdd = true;
                     angular.forEach($scope.categorys,function(cv){
                         if(cv.slug.toLowerCase() === categorySlug.toLowerCase()){
+                            $scope.selectCatId = cv.id;
+                            $scope.activePanelAdd = false;
                             angular.forEach(cv.article,function(av){
                                 if(av.id === articleId){
                                     articleName = av.name;
                                 }
                             });
+                        } else if ($scope.activePanelAdd){
+                            $scope.activePanel++;
                         }
                     });
                     $scope.selectTab(articleId);
@@ -40,15 +46,6 @@ angular.module("helpApp")
                 }
             });
 
-            $scope.selectCat = function(catId){
-                if ($scope.selectedCat === catId){
-                    $scope.selectedCat = "";
-                } else {
-                    $scope.selectedCat = catId;
-                }
-
-            };
-
             $scope.selectTab = function(tabId){
                 $scope.selectedTab = tabId;
                 articleContent.content({'article': $scope.selectedTab},{}, function(data){
@@ -61,7 +58,7 @@ angular.module("helpApp")
                 var url = $window.location.pathname ;
                 var subUrl = url.substring(0, url.indexOf('/help'));
                 $window.location.href = $window.location.origin + subUrl+ "/help/" + categorySlug + "/" + articleId;
-            }
+            };
 
     }
 ])
