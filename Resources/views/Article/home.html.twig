@@ -16,7 +16,7 @@
             {% verbatim %}
             <div class="panel-group" data-ng-model="activePanel" data-bs-collapse>
                 <div class="panel panel-default" data-ng-repeat="category in categorys">
-                    <h4 class="panel-title" id="category{{ category.id }}">
+                    <h4 class="panel-title">
                         <span data-bs-collapse-toggle
                               data-ng-class="{'help-category': selectedCat === category.id }" data-ng-click="selectCat(category.id)">
                             {{ category.name }}
