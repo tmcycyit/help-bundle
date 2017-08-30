@@ -1,9 +1,9 @@
 {
-    "name": "yit/help-bundle",
+    "name": "tmcycyit/help-bundle",
     "type": "symfony-bundle",
-    "license": "YIT",
+    "license": "TMCYCYIT",
     "autoload": {
-        "psr-0": { "Yit\\HelpBundle": "" }
+        "psr-0": { "Tmcycyit\\HelpBundle": "" }
     },
     "require": {
         "friendsofsymfony/rest-bundle": "1.5.*",
@@ -15,5 +15,5 @@
         "stfalcon/tinymce-bundle": "0.3.*"
     },
 
-    "target-dir": "Yit/HelpBundle"
+    "target-dir": "Tmcycyit/HelpBundle"
 }
