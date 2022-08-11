@@ -46,7 +46,13 @@ class HelpPhoto
      */
     protected $size;
     /**
-     * @Assert\File(maxSize="6000000")
+     * @Assert\Valid()
+     * @Assert\File(
+     *     maxSize = "6000000",
+     *     mimeTypes = {"application/pdf", "image/jpeg", "image/png" , "application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },
+     *     mimeTypesMessage = "Կցվող ֆայլը կարող է լինել WORD, EXCEL ,JPG, JPEG, PNG և PDF ֆորմատների",
+     *     maxSizeMessage = "Կցվող ֆայլը կարող է ունենալ մինչև 6 MB ծավալ"
+     * )
      */
     protected $file;
 
