@@ -1,6 +1,6 @@
 <?php
 
-namespace Yit\HelpBundle\Entity;
+namespace Tmcycyit\HelpBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -12,7 +12,7 @@ use JMS\Serializer\Annotation\Groups;
  * Category
  *
  * @ORM\Table(name="yit_help_category")
- * @ORM\Entity(repositoryClass="Yit\HelpBundle\Entity\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="Tmcycyit\HelpBundle\Entity\Repository\CategoryRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class Category
@@ -168,10 +168,10 @@ class Category
     /**
      * Add article
      *
-     * @param \Yit\HelpBundle\Entity\Article $article
+     * @param \Tmcycyit\HelpBundle\Entity\Article $article
      * @return Category
      */
-    public function addArticle(\Yit\HelpBundle\Entity\Article $article)
+    public function addArticle(\Tmcycyit\HelpBundle\Entity\Article $article)
     {
         $this->article[] = $article;
 
@@ -181,9 +181,9 @@ class Category
     /**
      * Remove article
      *
-     * @param \Yit\HelpBundle\Entity\Article $article
+     * @param \Tmcycyit\HelpBundle\Entity\Article $article
      */
-    public function removeArticle(\Yit\HelpBundle\Entity\Article $article)
+    public function removeArticle(\Tmcycyit\HelpBundle\Entity\Article $article)
     {
         $this->article->removeElement($article);
     }

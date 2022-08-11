@@ -1,8 +1,8 @@
 <?php
 
-namespace Yit\HelpBundle\Controller\Rest;
+namespace Tmcycyit\HelpBundle\Controller\Rest;
 
-use Yit\HelpBundle\Entity\Article;
+use Tmcycyit\HelpBundle\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -38,7 +38,7 @@ class ArticleController extends FOSRestController
      * )
      *
      * @Rest\View(serializerGroups={"content"})
-     * @ParamConverter("article", class="YitHelpBundle:Article")
+     * @ParamConverter("article", class="TmcycyitHelpBundle:Article")
      */
     public function getAction(Article $article){
         return $article;
@@ -64,7 +64,7 @@ class ArticleController extends FOSRestController
 
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('YitHelpBundle:Article')->findAll();
+        $articles = $em->getRepository('TmcycyitHelpBundle:Article')->findAll();
 
         return $articles;
     }

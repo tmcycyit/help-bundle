@@ -1,6 +1,6 @@
 <?php
 
-namespace Yit\HelpBundle\Entity;
+namespace Tmcycyit\HelpBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -11,7 +11,7 @@ use JMS\Serializer\Annotation\Groups;
  * Article
  *
  * @ORM\Table(name="article")
- * @ORM\Entity(repositoryClass="Yit\HelpBundle\Entity\Repository\ArticleRepository")
+ * @ORM\Entity(repositoryClass="Tmcycyit\HelpBundle\Entity\Repository\ArticleRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class Article
@@ -162,10 +162,10 @@ class Article
     /**
      * Set category
      *
-     * @param \Yit\HelpBundle\Entity\Category $category
+     * @param \Tmcycyit\HelpBundle\Entity\Category $category
      * @return Article
      */
-    public function setCategory(\Yit\HelpBundle\Entity\Category $category = null)
+    public function setCategory(\Tmcycyit\HelpBundle\Entity\Category $category = null)
     {
         $this->category = $category;
 
@@ -175,7 +175,7 @@ class Article
     /**
      * Get category
      *
-     * @return \Yit\HelpBundle\Entity\Category
+     * @return \Tmcycyit\HelpBundle\Entity\Category
      */
     public function getCategory()
     {

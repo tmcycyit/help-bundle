@@ -1,6 +1,6 @@
 <?php
 
-namespace Yit\HelpBundle\Entity\Repository;
+namespace Tmcycyit\HelpBundle\Entity\Repository;
 
 
 use Doctrine\ORM\EntityRepository;
@@ -18,7 +18,7 @@ class CategoryRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery("SELECT category, art
-                           FROM YitHelpBundle:Category category
+                           FROM TmcycyitHelpBundle:Category category
                            LEFT JOIN category.article art
                            ORDER BY category.position ASC
             ")

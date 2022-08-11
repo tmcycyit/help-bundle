@@ -1,9 +1,9 @@
 <?php
 
-namespace Yit\HelpBundle\Controller;
+namespace Tmcycyit\HelpBundle\Controller;
 
-use Yit\HelpBundle\Entity\Article;
-use Yit\HelpBundle\Entity\Category;
+use Tmcycyit\HelpBundle\Entity\Article;
+use Tmcycyit\HelpBundle\Entity\Category;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -37,7 +37,7 @@ class ArticleController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $categories = $em->getRepository('YitHelpBundle:Category')->findAllData();
+        $categories = $em->getRepository('TmcycyitHelpBundle:Category')->findAllData();
         if (!$categories) {
             throw $this->createNotFoundException('No category found');
         }

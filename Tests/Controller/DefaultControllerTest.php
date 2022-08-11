@@ -1,6 +1,6 @@
 <?php
 
-namespace Yit\HelpBundle\Tests\Controller;
+namespace Tmcycyit\HelpBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

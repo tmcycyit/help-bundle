@@ -47,7 +47,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Yit\HelpBundle\YitHelpBundle(),
+        new Tmcycyit\HelpBundle\TmcycyitHelpBundle(),
     );
 }
 ```
@@ -96,17 +96,17 @@ yit_help:
 ``` yaml
 # app/config/routing.yml
 yit_help:
-    resource: "@YitHelpBundle/Controller/"
+    resource: "@TmcycyitHelpBundle/Controller/"
     type:     annotation
     prefix:   /
 
 help_article_rest:
     type:     rest
-    resource: Yit\HelpBundle\Controller\Rest\ArticleController
+    resource: Tmcycyit\HelpBundle\Controller\Rest\ArticleController
 
 help_category_rest:
     type:     rest
-    resource: Yit\HelpBundle\Controller\Rest\CategoryController
+    resource: Tmcycyit\HelpBundle\Controller\Rest\CategoryController
 ```
 ### Step 5: Update your database schema
 

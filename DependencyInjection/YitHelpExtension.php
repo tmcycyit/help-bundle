@@ -1,6 +1,6 @@
 <?php
 
-namespace Yit\HelpBundle\DependencyInjection;
+namespace Tmcycyit\HelpBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class YitHelpExtension extends Extension implements PrependExtensionInterface
+class TmcycyitHelpExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * {@inheritDoc}
@@ -55,7 +55,7 @@ class YitHelpExtension extends Extension implements PrependExtensionInterface
         if (isset($bundles['AsseticBundle'])) //is assetic bundle set
         {
             //array for assetic
-            $insertionForAssetic = array('bundles' => array( 'YitHelpBundle' ));
+            $insertionForAssetic = array('bundles' => array( 'TmcycyitHelpBundle' ));
 
             // insert assetic bundle name  into config.yml
             foreach ($container->getExtensions() as $name => $extension)

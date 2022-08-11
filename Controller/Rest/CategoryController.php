@@ -1,8 +1,8 @@
 <?php
 
-namespace Yit\HelpBundle\Controller\Rest;
+namespace Tmcycyit\HelpBundle\Controller\Rest;
 
-use Yit\HelpBundle\Entity\Category;
+use Tmcycyit\HelpBundle\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -38,7 +38,7 @@ class CategoryController extends FOSRestController
      * )
      *
      * @Rest\View(serializerGroups={"category", "category_article", "article"})
-     * @ParamConverter("category", class="YitHelpBundle:Category")
+     * @ParamConverter("category", class="TmcycyitHelpBundle:Category")
      */
     public function getAction(Category $category){
         return $category;
@@ -64,7 +64,7 @@ class CategoryController extends FOSRestController
 
         $em = $this->getDoctrine()->getManager();
 
-        $categories = $em->getRepository('YitHelpBundle:Category')->findAllData();
+        $categories = $em->getRepository('TmcycyitHelpBundle:Category')->findAllData();
 
         return $categories;
     }

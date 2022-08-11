@@ -1,6 +1,6 @@
 <?php
 
-namespace Yit\HelpBundle\Entity\Repository;
+namespace Tmcycyit\HelpBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -16,7 +16,7 @@ class ArticleRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery("SELECT art, category
-                           FROM YitHelpBundle:Article art
+                           FROM TmcycyitHelpBundle:Article art
                            LEFT JOIN art.category category
                            WHERE art.slug = :slug
             ")

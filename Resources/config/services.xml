@@ -11,41 +11,41 @@
 
     <services>
         <!-- category -->
-        <service id="yit.help.admin.category" class="Yit\HelpBundle\Admin\CategoryAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Yit Help" label="Category"/>
+        <service id="yit.help.admin.category" class="Tmcycyit\HelpBundle\Admin\CategoryAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Tmcycyit Help" label="Category"/>
             <argument/>
-            <argument>Yit\HelpBundle\Entity\Category</argument>
+            <argument>Tmcycyit\HelpBundle\Entity\Category</argument>
             <argument>SonataAdminBundle:CRUD</argument>
             <call method="setTemplates">
                 <argument type="collection">
-                    <argument key="edit">YitHelpBundle:Admin:edit_help.html.twig</argument>
+                    <argument key="edit">TmcycyitHelpBundle:Admin:edit_help.html.twig</argument>
                     <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
                 </argument>
             </call>
         </service>
         <!-- article -->
-        <service id="yit.help.admin.article" class="Yit\HelpBundle\Admin\ArticleAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Yit Help" label="Article"/>
+        <service id="yit.help.admin.article" class="Tmcycyit\HelpBundle\Admin\ArticleAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Tmcycyit Help" label="Article"/>
             <argument/>
-            <argument>Yit\HelpBundle\Entity\Article</argument>
+            <argument>Tmcycyit\HelpBundle\Entity\Article</argument>
             <argument>SonataAdminBundle:CRUD</argument>
             <call method="setTemplates">
                 <argument type="collection">
-                    <argument key="edit">YitHelpBundle:Admin:edit_help.html.twig</argument>
+                    <argument key="edit">TmcycyitHelpBundle:Admin:edit_help.html.twig</argument>
                     <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
                 </argument>
             </call>
         </service>
         <!-- help photo -->
-        <service id="yit.help.admin.help.photo" class="Yit\HelpBundle\Admin\HelpPhotoAdmin">
-            <tag name="sonata.admin" manager_type="orm" group="Yit Help" label="Photo"/>
+        <service id="yit.help.admin.help.photo" class="Tmcycyit\HelpBundle\Admin\HelpPhotoAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Tmcycyit Help" label="Photo"/>
             <argument/>
-            <argument>Yit\HelpBundle\Entity\HelpPhoto</argument>
+            <argument>Tmcycyit\HelpBundle\Entity\HelpPhoto</argument>
             <argument>SonataAdminBundle:CRUD</argument>
             <call method="setTemplates">
                 <argument type="collection">
-                    <argument key="edit">YitHelpBundle:Admin:edit_help.html.twig</argument>
-                    <argument key="show">YitHelpBundle:Admin:show_help.html.twig</argument>
+                    <argument key="edit">TmcycyitHelpBundle:Admin:edit_help.html.twig</argument>
+                    <argument key="show">TmcycyitHelpBundle:Admin:show_help.html.twig</argument>
                 </argument>
             </call>
         </service>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Yit\HelpBundle\Entity;
+namespace Tmcycyit\HelpBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
