@@ -187,7 +187,7 @@ class HelpPhoto
      */
     public function getPath()
     {
-        return '/uploads/help_photos';
+        return '/upload/help';
     }
 
     /**
