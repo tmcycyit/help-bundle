@@ -3,7 +3,7 @@
 {% block stylesheets %}
     {{ parent() }}
     {% stylesheets output='css/help.css'
-    'bundles/yithelp/css/yitHelp.less'
+    'bundles/tmcycyithelp/css/yitHelp.less'
     filter='less,cssrewrite,yui_css' %}
     <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
     {% endstylesheets %}
@@ -38,8 +38,8 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('bundles/yithelp/js/angular/app.js') }}"></script>
-    <script src="{{ asset('bundles/yithelp/js/angular/services/helpData.js') }}"></script>
-    <script src="{{ asset('bundles/yithelp/js/angular/services/articleContent.js') }}"></script>
-    <script src="{{ asset('bundles/yithelp/js/angular/controller/main.js') }}"></script>
+    <script src="{{ asset('bundles/tmcycyithelp/js/angular/app.js') }}"></script>
+    <script src="{{ asset('bundles/tmcycyithelp/js/angular/services/helpData.js') }}"></script>
+    <script src="{{ asset('bundles/tmcycyithelp/js/angular/services/articleContent.js') }}"></script>
+    <script src="{{ asset('bundles/tmcycyithelp/js/angular/controller/main.js') }}"></script>
 {% endblock %}

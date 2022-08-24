@@ -25,7 +25,7 @@ class ArticleController extends Controller
      */
     public function homeAction()
     {
-        if ($this->container->getParameter('yit_help.help_secure'))
+        if ($this->container->getParameter('tmcycyit_help.help_secure'))
         {
             // get current user
             $user = $this->getUser();
