@@ -26,7 +26,7 @@ Add HelpBundle in your composer.json:
 ```js
 {
     "require": {
-        "yit/help-bundle": "dev-master",
+        "tmcycyit/help-bundle": "dev-master",
     }
 }
 ```
