@@ -20,7 +20,7 @@ class ArticleController extends Controller
     /**
      * @Route("/help", name="yit_content_homepage")
      * @Route("/help/{categoryName}/{articleId}",requirements={ "articleId": "\d+" })
-     * @Template()
+     * @Template("TmcycyitHelpBundle:Article:home.html.twig")
      *
      */
     public function homeAction()
